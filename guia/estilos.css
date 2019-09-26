@@ -1,0 +1,337 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+#foto-grupal {
+  margin: 0;
+}
+header img {
+  width: 100%;
+}
+/*
+::-webkit-scrollbar{
+  background-color: white;
+}
+::-webkit-scrollbar-thumb{
+background-color: red;
+border-radius: 10px;
+}
+*/
+
+/*
+section img {
+  width: 250px;
+}
+*/
+/*
+#main {
+  text-align: center;
+}
+*/
+/*#main .companeros-container*/
+/*EXPLICAR > */
+#main h2:nth-child(1)::first-letter{
+  color: red;
+}
+/*
+#main h2:nth-child(1){
+ 
+  color: transparent;
+  background: linear-gradient(to top ,red,blue);
+  -webkit-background-clip:text;
+}
+*/
+/*
+explicar .companeros-container:nth-child(2) 
+  ---> porque no se puede nth-child(1) 
+  ---> motivo : porque hay un elemento arriba h2
+#main .companeros-container:nth-child(2){
+
+}
+*/
+
+/*
+  INDICAR BORRAR todos .companeros-container  
+  --> quedarse con solo uno
+*/
+
+/*dentro de cada .companero-container
+hay :
+  article
+    figure
+*/
+#main .companeros-container {
+  /*border:3px solid blue;*/
+  display: flex;  
+  justify-content: space-evenly;
+  align-content: space-between;
+  flex-wrap: wrap;
+  padding: 0px 20px;
+}
+
+/*
+  ---> explicar  porque esto pinta todo
+  -->rsta :  porque dentro de figure no tiene hijos
+  --> solucion : companeros-container article si tiene    
+  */ 
+/*
+  #main .companeros-container article:nth-child(1){
+  border:3px solid blue;
+}
+*/
+
+/*
+AÑADIR A CADA ARTICLE TITLE  SUBTITLE DESCRIPTION
+ */
+ /*
+  em --> tamaño original del font-size del padre
+  1em -- 16px
+  rem-->tamaño original del font-size del root
+  1rem -- 16px
+
+ */
+
+
+.companeros-container article{
+  width: 20rem;
+  
+  position: relative;
+  /*border: 3px solid green;*/
+  margin-bottom:10px; 
+  box-shadow: -1px 2px 17px -3px rgba(0,0,0,0.75);
+  /*
+  aplicar box-shadow despues de configurar el fondo-family
+  e utilizar  el google font
+
+  */
+}
+.companeros-container article .informacion-alumno{
+  line-height: 22px;
+  text-align: center;
+  position: relative;
+  height: auto;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+}
+.companeros-container article figure  {
+ max-width: 100%;
+ text-align: center;
+ 
+}
+.companeros-container article figure img {
+  width: 100%;
+  object-fit: cover;
+  clip-path: polygon(0 0, 100% 0, 100% 81%, 0% 100%);
+}
+/*
+  indicar  que arreglaremos  la imagen  banner  
+  -->  efecto slider 
+*/
+
+#foto-grupal{
+  
+  background: url('./grupal.jpg');
+  background-size: cover;
+  height: calc(100vh - 10vh);
+  background-repeat: no-repeat;
+/*
+  attachment --> para quitar el desplazamiento fijo
+                  con el scroll
+*/ 
+  background-attachment: fixed;
+}
+
+.menu{
+  width: 100%;
+  top: 20px;
+  z-index: 2;
+  display: flex;
+  text-align: center;
+  position: fixed;
+  background: rgba(255,255,255,0.8); 
+}
+.menu li{
+  list-style: none;
+  flex-grow: 1;
+  padding: 20px;
+  cursor: pointer;
+  font-family: 'Open Sans', sans-serif;
+
+}
+.menu li:hover{
+  color: red;
+}
+/*
+article:hover figure img{
+  transform: scale(1.05);
+  transition: all 2s;
+}
+*/
+
+#carrusel {
+  text-align: center;
+}
+#carrusel div {
+  display: flex;
+  overflow-y: hidden;
+  justify-content: center;
+}
+footer {
+  text-align: center;
+}
+
+
+
+/*CSS CLASE DANIEL CHOQUECAHUANA*/
+
+/*
+#main .companeros-container {
+  border:3px solid blue;
+  display: flex;
+  
+  justify-content: space-between;
+  align-content: flex-start;
+  /* ANAÑADIR ESTA PROPIEDAD*/
+  /*
+  flex-wrap: wrap;
+}
+
+/*
+  script ejemplo
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>Anuario</title>
+		<link rel="stylesheet" href="estilos.css">
+	</head>
+	<body>
+		<header>
+			<figure id="foto-grupal">
+				<img src="grupal.jpg" alt="">
+			</figure>
+		</header>
+		
+		<section id="main">
+			<h2>Compañeros</h2>
+			<h2>in</h2>
+			<div class="companeros-container">
+				<article>
+					
+					<figure>
+						
+						<img src="estudiante.jpg" alt="">
+					</figure>
+				</article>
+				<article>
+					<figure>
+						<img src="estudiante.jpg" alt="">
+					</figure>
+				</article>
+				<article>
+					<figure>
+						<img src="estudiante.jpg" alt="">
+					</figure>
+				</article>
+			</div>
+			<div class="companeros-container">
+				<article>
+					<figure>
+						<img src="estudiante.jpg" alt="">
+					</figure>
+				</article>
+				<article>
+					<figure>
+						<img src="estudiante.jpg" alt="">
+					</figure>
+				</article>
+				<article>
+					<figure>
+						<img src="estudiante.jpg" alt="">
+					</figure>
+				</article>
+			</div>
+			<div class="companeros-container">
+				<article>
+					<figure>
+						<img src="estudiante.jpg" alt="">
+					</figure>
+				</article>
+				<article>
+					<figure>
+						<img src="estudiante.jpg" alt="">
+					</figure>
+				</article>
+				<article>
+					<figure>
+						<img src="estudiante.jpg" alt="">
+					</figure>
+				</article>
+			</div>
+			<button id="ver-mas">Ver más</button>
+		</section>
+		
+		<section id="carrusel">
+			<h2>Nuestras fotos</h2>
+			<div>
+				<article>
+					<figure>
+						<img src="img1.jpg" alt="">
+					</figure>
+				</article>
+				<article>
+					<figure>
+						<img src="img2.png" alt="">
+					</figure>
+				</article>
+				<article>
+					<figure>
+						<img src="img3.jpg" alt="">
+					</figure>
+				</article>
+				<article>
+					<figure>
+						<img src="img1.jpg" alt="">
+					</figure>
+				</article>
+				<article>
+					<figure>
+						<img src="img2.png" alt="">
+					</figure>
+				</article>
+				<article>
+					<figure>
+						<img src="img3.jpg" alt="">
+					</figure>
+				</article>
+				<article>
+					<figure>
+						<img src="img1.jpg" alt="">
+					</figure>
+				</article>
+				<article>
+					<figure>
+						<img src="img2.png" alt="">
+					</figure>
+				</article>
+				<article>
+					<figure>
+						<img src="img3.jpg" alt="">
+					</figure>
+				</article>
+			</div>
+		</section>
+		
+		<footer>
+				<p>Telésforo Catacora 2019 ©</p>
+			</footer>
+	</body>
+</html>
+
+
+
+*/
